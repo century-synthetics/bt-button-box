@@ -24,6 +24,8 @@ Once completed, find the installed package (usually in AppData\Local\Arduino15\p
 
 Load the sketch from the firmware directory.
 
+Change your board settings to use Adafruit Bluefruit nRF52832 Feather, plug in the device and choose the correct serial port.
+
 Upload the sketch to your board using the upload button.
 
 ## Electrical Layout
