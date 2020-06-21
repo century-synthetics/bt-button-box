@@ -30,8 +30,6 @@
 
     #define DEBOUNCE 16 // 16ms around 60Hz  
 
-    #define BATTERY_UPDATE_TICKS 1800 // Debounces/second * 30 - around every 30 seconds 
-
     #define _delay_us(us) delayMicroseconds(us)
     #define _delay_ms(ms) delay(ms)
     #define _delay(ms) delay(ms)

@@ -3,17 +3,11 @@
 
 #include "config.h"
 #include "bluetooth.h"
-#include "battery.h"
 
-// Note this library uses a custom version of BLEHidAdafruit to support gamepad HID.
+// Note this application uses a custom version of BLEHidAdafruit to support gamepad HID.
 // Please see install instructions in the Readme 
 BLEHidAdafruit blehid;
-BLEBas blebas;
 BLEDis bledis;
-
-void update_battery(uint8_t bat_percentage) {
-  blebas.write(bat_percentage);
-}
 
 bool is_bluetooth_connected() {
   return Bluefruit.connected();
@@ -32,7 +26,6 @@ void bluetooth_init() {
   bledis.setManufacturer(MANUFACTURER_NAME);
   bledis.setModel(MODEL_NAME);
   bledis.begin();
-  blebas.begin();
   blehid.begin();
 
   BLECharacteristic pnp_id = BLECharacteristic(UUID16_CHR_PNP_ID);
@@ -49,7 +42,6 @@ void start_advertising() {
 
   Bluefruit.Advertising.addAppearance(BLE_APPEARANCE_HID_GAMEPAD);
   Bluefruit.Advertising.addService(blehid);
-  Bluefruit.Advertising.addService(blebas);
 
   Bluefruit.Advertising.restartOnDisconnect(true);
   Bluefruit.Advertising.setInterval(32, 244);    // in unit of 0.625 ms
