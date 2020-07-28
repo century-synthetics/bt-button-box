@@ -13,15 +13,28 @@ This device is arduino compatible and uses a very simple sketch to give battery 
 You'll need:
 
 * An Adafruit Feather nRF52840 Express
+* A lithium polymer battery pack (250-2000mAh)
 * Soldering supplies
 * Normally open switches of any kind
 * A bluetooth USB dongle or onboard Bluetooth 5+ support
 
 The firmware is located in the firmware/NRF52840 directory. Use the readme to download and install the firmware.
 
+## Pairing and Usage
+
+Once the sketch is flashed to the board, the board will begin to advertise and will wait indefinitely to pair with a PC. While in pairing mode, the LED will strobe and once paired, it will turn off to conserve batteries. You can then verify the buttons are working by going to gamepad settings in Devices & Printers on Windows.
+
+You should now be able to use the controller like any other joystick/gamepad in your games. If it doesn't show up in a particular game, skip to the advanced mapping section below to setup a virtual controller.
+
+## Embedding the Board
+
+The board can simply be hooked up to USB inside your button box and all the individual switches soldered directly to the board.
+
+If you want to retrofit it into an existing non-wireless button box, the easiest method would be pulling the +5V and GND from USB off the existing button box and wiring +5V to the USB header and GND to the GND terminal on the Feather board. This will allow you to wire periodically to charge.
+
 ## Advanced Usage
 
-Since this software is arduino compatible, you can configure the board to use rotary encoders, pulse switches, funkyswitches and 4/8 way joysticks with a bit of hacking. The board itself is very versatile, fast and has  plenty of RAM, so I2C and SPI input devices will also work.
+Since this software is arduino compatible, you can configure the board to use rotary encoders, pulse switches, funkyswitches and 4/8 way joysticks with a bit of coding. The board itself is very versatile, fast and has  plenty of RAM, so I2C and SPI input devices will also work.
 
 ## Advanced Mapping
 
