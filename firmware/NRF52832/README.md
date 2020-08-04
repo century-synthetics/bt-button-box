@@ -12,7 +12,11 @@ Go into the Arduino IDE Preferences and add `https://www.adafruit.com/package_ad
 
 Restart the Arduino IDE
 
-Open the Boards Manager option from the Tools -> Board menu and install 'Adafruit nRF52 by Adafruit' using **version 0.7.5**
+Open the Boards Manager option from the Tools -> Board menu and install 'Adafruit nRF52 by Adafruit'
+
+If you have an older revision of the board (March 2018 and before) use version 0.7.5 and install the 0.7.5 Bluefruit52Lib.
+
+Newer revisions of the board (March 2018 and newer) install 0.20.5 and use the 0.20.5 Bluefruit52Lib.
 
 This will install the Board Support Package (BSP) to your computer and may take a few minutes.
 
@@ -78,3 +82,15 @@ This project was kicked off to replace the Accuforce direct drive wheel's  butto
 If you'd like to build one, the gerbers and schematics are freely available in this repository. They circuit can be easily forked and modified on the Circuitmaker repository here: <https://workspace.circuitmaker.com/Projects/Details/century-synthetics/AFV2-Wireless-Button-Box-Mod>
 
 The circuit is designed to be built by hand using 0805 surface mount parts or larger. It is a moderately challenging build due to the bluetooth QFN module. You can see the BOM folder for a parts list.
+
+## Troubleshooting
+
+Q: The module wont pair with the PC or my Phone and the red LED is blinking quickly.
+
+A: Upgrade the Adafruit Board Library and Bluefruit52Lib to 0.25.0
+
+---
+
+Q: I don't like how the pins are mapped, how can I change them?
+
+A: The pins are mapped in config.h and you can use any of the IO pins except pin 31 (used for detecting battery voltage)
