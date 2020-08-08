@@ -23,7 +23,7 @@
     #define BUTTON_13 14
     #define BUTTON_14 15
     #define BUTTON_15 16
-    #define BUTTON_16 18
+    #define BUTTON_16 31
     #define TOTAL_BUTTONS 16
 
     #define CONNECTED_INDICATOR_LED_PIN 17
